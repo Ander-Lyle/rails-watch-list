@@ -6,7 +6,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     if @booksmark.save
-      redirect_to bookmark_path(@bookmark)
+      redirect_to new_bookmark_path(@bookmark)
     else
       render :new, status: :unprocessable_entity
     end
@@ -16,7 +16,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     # No need for app/views/bookmarks/destroy.html.erb
-    redirect_to bookmarks_path, status: :see_other
+    redirect_to new_bookmark_path, status: :see_other
   end
 
   private
