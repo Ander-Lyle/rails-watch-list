@@ -24,3 +24,9 @@ Movie.create(title: "Ocean's Eight",
              overview: 'Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.', poster_url: 'https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg', rating: 7.0)
 
 puts 'list created!'
+
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+article = Article.new(title: 'NES', body: 'A great console')
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+article.save
+puts 'pictures ok!'

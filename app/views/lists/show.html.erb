@@ -1,3 +1,4 @@
 <h1><%= @list.name %></h1>
 <p>To Do: View Books marks and add book marks</p>
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
 link <%= link_to 'Back', lists_path %>
